@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Opinionated Typescript typings for Node TAP",
   "main": "index.d.ts",
+  "files": ["*.d.ts"],
   "scripts": {
     "test": "tsc"
   },
