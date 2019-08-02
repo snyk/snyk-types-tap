@@ -17,13 +17,11 @@ declare module 'tap' {
   // plan(n: number): void;
   // end(): void;
 
-  interface DataObject {
-    [k: string]: string | number | DataObject;
-  }
-
-  interface MatchObject {
-    [k: string]: string | number | RegExp | MatchObject;
-  }
+  type MatchObject<T, K extends keyof T> = {
+    // A subset of fields of original object, but RegExp's can appear in
+    // place of strings
+    [P in K]: T[P] | MatchObject<T[P], keyof T[P]> | RegExp;
+  };
 
   export interface Test {
 
@@ -45,7 +43,7 @@ declare module 'tap' {
     deepEqual<T>(actual: T, expected: T, message?: string): void;
 
     match(actual: string | undefined, expected: string | RegExp, message: string): void;
-    match(actual: DataObject, expected: MatchObject, message: string): void;
+    match<T>(actual: T, expected: MatchObject<T, keyof T>, message: string): void;
 
     rejects<T>(p: Promise<T>, matcher?: RegExp, message?: string): void;
   }
