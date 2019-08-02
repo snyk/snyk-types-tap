@@ -1,0 +1,22 @@
+{
+  "name": "@snyk/types-tap",
+  "version": "0.0.1",
+  "description": "Opinionated Typescript typings for Node TAP",
+  "main": "index.d.ts",
+  "scripts": {
+    "test": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snyk/snyk-types-tap.git"
+  },
+  "author": "snyk.io",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/snyk/snyk-types-tap/issues"
+  },
+  "homepage": "https://github.com/snyk/snyk-types-tap#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}
