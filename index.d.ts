@@ -45,8 +45,7 @@ declare module 'tap' {
     deepEqual<T>(actual: T, expected: T, message?: string): void;
 
     match(actual: string | undefined, expected: string | RegExp, message: string): void;
-    // The "expected" object can have regexps in place of strings
-    match(actual: DataObject, expected: DataObject, message: string): void;
+    match(actual: DataObject, expected: MatchObject, message: string): void;
 
     rejects<T>(p: Promise<T>, matcher?: RegExp, message?: string): void;
   }
