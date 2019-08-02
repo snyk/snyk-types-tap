@@ -31,8 +31,8 @@ declare module 'tap' {
 
     teardown(fn: () => void): void;
 
-
     fail(message: string): void;
+    bailout(message: string): void;
 
     // Assertions, see https://node-tap.org/docs/api/asserts/
     ok(value: any, message?: string): void;
